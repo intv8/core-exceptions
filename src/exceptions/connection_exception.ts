@@ -1,0 +1,27 @@
+/**
+ * This file exports the ConnectionException exception and related features.
+ *
+ * @copyright 2022 integer11. All rights reserved. MIT license.
+ */
+
+//  Import base exception
+import { OSException } from './os_exception.ts';
+
+//  Import exception init type
+import type { BaseExceptionInit } from '../types/types.ts';
+
+/** The exception init properties for the ConnectionException exception. */
+export type ConnectionExceptionInit = BaseExceptionInit;
+
+/** An exception raised when a connection is in an unexpected state. */
+export class ConnectionException<
+  T extends ConnectionExceptionInit = ConnectionExceptionInit,
+> extends OSException<T> {
+  /** Creates a new ConnectionException exception with the provided message, optionally with additional ConnectionExceptionInit properties. */
+  constructor(message: string, init?: T) {
+    super(message, init);
+  }
+
+  /** The exception code for the ConnectionException exception. */
+  public code = 0x7;
+}

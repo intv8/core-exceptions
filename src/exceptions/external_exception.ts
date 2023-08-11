@@ -1,0 +1,73 @@
+/**
+ * This file exports the ExternalException exception and related features.
+ *
+ * @copyright 2022 integer11. All rights reserved. MIT license.
+ */
+
+//  Import base exception
+import { Exception } from './exception.ts';
+
+//  Import exception init type
+import type { BaseExceptionInit } from '../types/types.ts';
+
+//  Import external codebase type
+import type { Codebase } from '../../deps.ts';
+
+/** The default message for the ExternalException exception. */
+const DEFAULT_MESSAGE = 'An external codebase raised an exception.';
+
+/** The exception init properties for the ExternalException exception. */
+export type ExternalExceptionInit = BaseExceptionInit<{
+  /** The type of Codebase that raised an error. */
+  externalType?: Codebase;
+
+  /** The name of the external codebase that raised the error. */
+  externalName?: string;
+}>;
+
+/** Creates a message from the provided ExternalExceptionInit properties. */
+function createMsgFromInit(init: ExternalExceptionInit): string {
+  const { externalType, externalName } = init;
+
+  switch (true) {
+    case (!!externalType && !!externalName):
+      return `The external ${externalType} "${externalName}" raised an exception.`;
+    case (!!externalName):
+      return `The external codebase "${externalName}" raised an exception.`;
+    case (!!externalType):
+      return `An external ${externalType} raised an exception.`;
+    default:
+      return DEFAULT_MESSAGE;
+  }
+}
+
+/** An exception raised when external (3rd party) code raised an error. */
+export class ExternalException<
+  T extends ExternalExceptionInit = ExternalExceptionInit,
+> extends Exception<T> {
+  /** Creates a new ExternalException exception with the default message and no exception init properties. */
+  constructor();
+
+  /** Creates a new ExternalException exception with a message created from the provided ExternalExceptionInit properties. */
+  constructor(init: T);
+
+  /** Creates a new ExternalException exception with the provided message, optionally with additional ExternalExceptionInit properties. */
+  constructor(message: string, init?: T);
+
+  //  Constructor overload implementation
+  // deno-lint-ignore default-param-last
+  constructor(msgOrInit: string | T = DEFAULT_MESSAGE, maybeInit?: T) {
+    let message: string = msgOrInit as string;
+    let init: T | undefined = maybeInit;
+
+    if (typeof msgOrInit !== 'string') {
+      init = msgOrInit;
+      message = createMsgFromInit(init);
+    }
+
+    super(message ? message : DEFAULT_MESSAGE, init);
+  }
+
+  /** The exception code for the ExternalException exception. */
+  public code = 0x9;
+}
