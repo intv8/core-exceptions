@@ -73,7 +73,7 @@ export const initFixtures = [
     asString: 'TimeoutException [0x1b]: The operation "example" timed out.',
     asValue: 27,
     cause: undefined,
-    data: init3,
+    data: init2,
     helpUrl:
       `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=The%20operation%20%22example%22%20timed%20out.&data=${
         encodeURIComponent(JSON.stringify(init2))
@@ -81,14 +81,14 @@ export const initFixtures = [
   }],
   [init3, {
     name: 'TimeoutException',
-    message: 'An operation timed after 5 seconds.',
+    message: 'An operation timed after 10 seconds.',
     code: 27,
-    asString: 'TimeoutException [0x1b]: An operation timed after 5 seconds.',
+    asString: 'TimeoutException [0x1b]: An operation timed after 10 seconds.',
     asValue: 27,
     cause: undefined,
     data: init3,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=An%20operation%20timed%20after%205%20seconds.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=An%20operation%20timed%20after%2010%20seconds.&data=${
         encodeURIComponent(JSON.stringify(init3))
       }`,
   }],
@@ -107,42 +107,42 @@ export const initFixtures = [
   }],
   [init5, {
     name: 'TimeoutException',
-    message: 'A request timed after 5 seconds.',
+    message: 'A request timed after 10 seconds.',
     code: 27,
-    asString: 'TimeoutException [0x1b]: A request timed after 5 seconds.',
+    asString: 'TimeoutException [0x1b]: A request timed after 10 seconds.',
     asValue: 27,
     cause: undefined,
     data: init5,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=A%20request%20timed%20after%205%20seconds.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=A%20request%20timed%20after%2010%20seconds.&data=${
         encodeURIComponent(JSON.stringify(init5))
       }`,
   }],
   [init6, {
     name: 'TimeoutException',
-    message: 'The operation "example" timed after 5 seconds.',
+    message: 'The operation "example" timed after 10 seconds.',
     code: 27,
     asString:
-      'TimeoutException [0x1b]: The operation "example" timed after 5 seconds.',
+      'TimeoutException [0x1b]: The operation "example" timed after 10 seconds.',
     asValue: 27,
     cause: undefined,
     data: init6,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=The%20operation%20%22example%22%20timed%20after%205%20seconds.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=The%20operation%20%22example%22%20timed%20after%2010%20seconds.&data=${
         encodeURIComponent(JSON.stringify(init6))
       }`,
   }],
   [init7, {
     name: 'TimeoutException',
-    message: 'The request "example" timed after 5 seconds.',
+    message: 'The request "example" timed after 10 seconds.',
     code: 27,
     asString:
-      'TimeoutException [0x1b]: The request "example" timed after 5 seconds.',
+      'TimeoutException [0x1b]: The request "example" timed after 10 seconds.',
     asValue: 27,
     cause: undefined,
     data: init7,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=The%20request%20%22example%22%20timed%20after%205%20seconds.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1b?message=The%20request%20%22example%22%20timed%20after%2010%20seconds.&data=${
         encodeURIComponent(JSON.stringify(init7))
       }`,
   }],

@@ -82,10 +82,10 @@ export const initFixtures = [
     asString: 'RangeException [0x12]: The value of "example" is out of range.',
     asValue: 18,
     cause: undefined,
-    data: init3,
+    data: init2,
     helpUrl:
       `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x12?message=The%20value%20of%20%22example%22%20is%20out%20of%20range.&data=${
-        encodeURIComponent(JSON.stringify(init3))
+        encodeURIComponent(JSON.stringify(init2))
       }`,
   }],
   [init3, {

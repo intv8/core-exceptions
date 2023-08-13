@@ -46,7 +46,7 @@ function createMsgFromInit(init: RecursionExceptionInit): string {
     case (!!operationType && !!operationName):
       return `The ${operationType} "${operationName}" exceeded the maximum recursion depth.`;
     case (!!recursionDepth):
-      return `${conj} operation exceeded the maximum recursion depth of ${recursionDepth} levels.`;
+      return `An operation exceeded the maximum recursion depth of ${recursionDepth} levels.`;
     case (!!operationName):
       return `The operation "${operationName}" exceeded the maximum recursion depth.`;
     case (!!operationType):

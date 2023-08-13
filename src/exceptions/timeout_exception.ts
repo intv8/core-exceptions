@@ -47,7 +47,7 @@ function createMsgFromInit(init: TimeoutExceptionInit): string {
     case (!!operationType && !!operationName):
       return `The ${operationType} "${operationName}" timed out.`;
     case (!!operationTimeout):
-      return `${conj} operation timed after ${operationTimeout} second${s}.`;
+      return `An operation timed after ${operationTimeout} second${s}.`;
     case (!!operationName):
       return `The operation "${operationName}" timed out.`;
     case (!!operationType):

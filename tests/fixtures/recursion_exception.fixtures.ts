@@ -77,7 +77,7 @@ export const initFixtures = [
       'RecursionException [0x19]: The operation "example" exceeded the maximum recursion depth.',
     asValue: 25,
     cause: undefined,
-    data: init3,
+    data: init2,
     helpUrl:
       `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x19?message=The%20operation%20%22example%22%20exceeded%20the%20maximum%20recursion%20depth.&data=${
         encodeURIComponent(JSON.stringify(init2))

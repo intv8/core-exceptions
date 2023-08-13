@@ -15,6 +15,7 @@ import {
 } from '../mod.ts';
 
 import {
+  initFixtures,
   messageCauseFixtures,
   messageDataCauseFixtures,
   messageDataFixtures,
@@ -103,6 +104,24 @@ describe('TimeoutException', () => {
 
         assert(ex instanceof TimeoutException);
         assertEquals(ex.name, expected.name);
+        assertEquals(ex.message, expected.message);
+        assertEquals(ex.code, expected.code);
+        assertEquals(ex.cause, expected.cause);
+        assertEquals(ex.data, expected.data);
+        assertEquals(ex.helpUrl, expected.helpUrl);
+      });
+    });
+  });
+
+  describe('(init)', () => {
+    it('should create an TimeoutException with the provided init', () => {
+      initFixtures.forEach(([init, expected]) => {
+        const ex = new TimeoutException(init);
+
+        assert(ex instanceof TimeoutException);
+        assertEquals(ex.name, expected.name);
+        assertEquals(`${ex}`, expected.asString);
+        assertEquals(+ex, expected.asValue);
         assertEquals(ex.message, expected.message);
         assertEquals(ex.code, expected.code);
         assertEquals(ex.cause, expected.cause);

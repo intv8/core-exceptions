@@ -13,7 +13,6 @@ import {
 } from '../dev_deps.ts';
 
 import {
-  ArgumentException,
   ArgumentIndexException,
   Exception,
   InvalidException,
@@ -21,6 +20,7 @@ import {
 } from '../mod.ts';
 
 import {
+  initFixtures,
   messageCauseFixtures,
   messageDataCauseFixtures,
   messageDataFixtures,
@@ -47,8 +47,8 @@ describe('ArgumentIndexException', () => {
       assert(instance instanceof ValueException);
     });
 
-    it('should extend ArgumentException', () => {
-      assert(instance instanceof ArgumentException);
+    it('should extend ArgumentIndexException', () => {
+      assert(instance instanceof ArgumentIndexException);
     });
   });
 
@@ -122,6 +122,24 @@ describe('ArgumentIndexException', () => {
 
         assert(ex instanceof ArgumentIndexException);
         assertEquals(ex.name, expected.name);
+        assertEquals(ex.message, expected.message);
+        assertEquals(ex.code, expected.code);
+        assertEquals(ex.cause, expected.cause);
+        assertEquals(ex.data, expected.data);
+        assertEquals(ex.helpUrl, expected.helpUrl);
+      });
+    });
+  });
+
+  describe('(init)', () => {
+    it('should create an ArgumentIndexException with the provided init', () => {
+      initFixtures.forEach(([init, expected]) => {
+        const ex = new ArgumentIndexException(init);
+
+        assert(ex instanceof ArgumentIndexException);
+        assertEquals(ex.name, expected.name);
+        assertEquals(`${ex}`, expected.asString);
+        assertEquals(+ex, expected.asValue);
         assertEquals(ex.message, expected.message);
         assertEquals(ex.code, expected.code);
         assertEquals(ex.cause, expected.cause);

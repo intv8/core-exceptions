@@ -77,7 +77,7 @@ export const initFixtures = [
       'IndexException [0x14]: An index is outside of the bounds of the array "example".',
     asValue: 20,
     cause: undefined,
-    data: init3,
+    data: init2,
     helpUrl:
       `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x14?message=An%20index%20is%20outside%20of%20the%20bounds%20of%20the%20array%20%22example%22.&data=${
         encodeURIComponent(JSON.stringify(init2))

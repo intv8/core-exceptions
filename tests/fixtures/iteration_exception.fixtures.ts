@@ -86,7 +86,7 @@ export const initFixtures = [
       'IterationException [0x1a]: The operation "example" exceeded the maximum iteration count.',
     asValue: 26,
     cause: undefined,
-    data: init3,
+    data: init2,
     helpUrl:
       `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=The%20operation%20%22example%22%20exceeded%20the%20maximum%20iteration%20count.&data=${
         encodeURIComponent(JSON.stringify(init2))
@@ -103,7 +103,7 @@ export const initFixtures = [
     cause: undefined,
     data: init3,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=An%20operation%20exceeded%20the%20maximum%20recursion%20depth%20of%205%iterations.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=An%20operation%20exceeded%20the%20maximum%20iteration%20count%20of%205%20iterations.&data=${
         encodeURIComponent(JSON.stringify(init3))
       }`,
   }],
@@ -146,7 +146,7 @@ export const initFixtures = [
     cause: undefined,
     data: init6,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=A%20request%20exceeded%20the%20maximum%20recursion%20depth%20of%205%20iterations.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=A%20request%20exceeded%20the%20maximum%20iteration%20count%20of%205%20iterations.&data=${
         encodeURIComponent(JSON.stringify(init6))
       }`,
   }],
@@ -176,7 +176,7 @@ export const initFixtures = [
     cause: undefined,
     data: init8,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=The%20operation%20%22example%22%20exceeded%20the%20maximum%20recursion%20depth%20of%205%20iterations.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=The%20operation%20%22example%22%20exceeded%20the%20maximum%20iteration%20count%20of%205%20iterations.&data=${
         encodeURIComponent(JSON.stringify(init8))
       }`,
   }],
@@ -221,7 +221,7 @@ export const initFixtures = [
     cause: undefined,
     data: init11,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=The%20request%20%22example%22%20exceeded%20the%20maximum%20recursion%20depth%20of%205%20iterations.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=The%20request%20%22example%22%20exceeded%20the%20maximum%20iteration%20count%20of%205%20iterations.&data=${
         encodeURIComponent(JSON.stringify(init11))
       }`,
   }],
@@ -243,15 +243,15 @@ export const initFixtures = [
   [init13, {
     name: 'IterationException',
     message:
-      'Arequest exceeded the maximum iteration count of 5 for consecutive repeating values.',
+      'A request exceeded the maximum iteration count of 5 for consecutive repeating values.',
     code: 26,
     asString:
-      'IterationException [0x1a]: Arequest exceeded the maximum iteration count of 5 for consecutive repeating values.',
+      'IterationException [0x1a]: A request exceeded the maximum iteration count of 5 for consecutive repeating values.',
     asValue: 26,
     cause: undefined,
     data: init13,
     helpUrl:
-      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=Arequest%20exceeded%20the%20maximum%20iteration%20count%20of%205%20for%20consecutive%20repeating%20values.&data=${
+      `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x1a?message=A%20request%20exceeded%20the%20maximum%20iteration%20count%20of%205%20for%20consecutive%20repeating%20values.&data=${
         encodeURIComponent(JSON.stringify(init13))
       }`,
   }],

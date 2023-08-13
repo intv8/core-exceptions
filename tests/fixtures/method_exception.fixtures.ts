@@ -75,7 +75,7 @@ export const initFixtures = [
       'MethodException [0x16]: Unable to locate a method on the object "example".',
     asValue: 22,
     cause: undefined,
-    data: init3,
+    data: init2,
     helpUrl:
       `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x16?message=Unable%20to%20locate%20a%20method%20on%20the%20object%20%22example%22.&data=${
         encodeURIComponent(JSON.stringify(init2))

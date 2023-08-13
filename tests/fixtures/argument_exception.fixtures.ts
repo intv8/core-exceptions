@@ -36,7 +36,7 @@ export const messageFixtures = [
 ] as const;
 
 const init1 = { argumentName: 'example' } as const;
-const init2 = { argumentConstraints: ['string', 'lowercase'] } as const;
+const init2 = { argumentConstraints: ['string', 'lowercase'] };
 const init3 = { ...init1, ...init2 } as const;
 
 export const initFixtures = [

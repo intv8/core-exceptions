@@ -78,7 +78,7 @@ export const initFixtures = [
       'KeyException [0x15]: Unable to locate a property key on the object or record "example".',
     asValue: 21,
     cause: undefined,
-    data: init3,
+    data: init2,
     helpUrl:
       `${I11N_EX2_HOST}${I11N_EX2_PATH}/0x15?message=Unable%20to%20locate%20a%20property%20key%20on%20the%20object%20or%20record%20%22example%22.&data=${
         encodeURIComponent(JSON.stringify(init2))
