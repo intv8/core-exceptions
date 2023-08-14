@@ -10,16 +10,16 @@ import { InvalidException } from './invalid_exception.ts';
 //  Import exception init type
 import type { BaseExceptionInit } from '../types/types.ts';
 
-/** The default message for the NotImplementedException exception. */
+/** The default message for the {@link NotImplementedException} exception. */
 const DEFAULT_MESSAGE = 'This method has not been implemented.';
 
-/** The exception init properties for the NotImplementedException exception. */
+/** The exception init properties for the {@link NotImplementedException} exception. */
 export type NotImplementedExceptionInit = BaseExceptionInit<{
   /** The name of the method that is not implemented. */
   methodName?: string;
 }>;
 
-/** Creates a message from the provided NotImplementedExceptionInit properties. */
+/** Creates a message from the provided {@link NotImplementedExceptionInit} properties. */
 function createMsgFromInit(init: NotImplementedExceptionInit): string {
   const { methodName } = init;
 
@@ -35,13 +35,13 @@ function createMsgFromInit(init: NotImplementedExceptionInit): string {
 export class NotImplementedException<
   T extends NotImplementedExceptionInit = NotImplementedExceptionInit,
 > extends InvalidException<T> {
-  /** Creates a new NotImplementedException exception with the default message and no exception init properties. */
+  /** Creates a new {@link NotImplementedException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new NotImplementedException exception with a message created from the provided NotImplementedExceptionInit properties. */
+  /** Creates a new {@link NotImplementedException} exception with a message created from the provided {@link NotImplementedExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new NotImplementedException exception with the provided message, optionally with additional NotImplementedExceptionInit properties. */
+  /** Creates a new {@link NotImplementedException} exception with the provided message, optionally with additional {@link NotImplementedExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -58,6 +58,6 @@ export class NotImplementedException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the NotImplementedException exception. */
+  /** The exception code for the {@link NotImplementedException} exception. */
   public code = 0xb;
 }

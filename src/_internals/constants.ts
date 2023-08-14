@@ -6,7 +6,7 @@
  */
 
 /** The host for integer11's exception explainer tool. */
-export const I11N_EX2_HOST = `https://docs.integer11.org`;
+export const I11N_EX2_HOST = 'https://docs.integer11.org';
 
 /** The path for integer11's exception explainer tool. */
-export const I11N_EX2_PATH = `/ex2`;
+export const I11N_EX2_PATH = '/ex2';

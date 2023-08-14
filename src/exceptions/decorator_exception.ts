@@ -13,10 +13,10 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  Import decorator type
 import type { DecoratorTarget } from '../../deps.ts';
 
-/** The default message for the DecoratorException exception. */
+/** The default message for the {@link DecoratorException} exception. */
 const DEFAULT_MESSAGE = 'A decorator failed to apply.';
 
-/** The exception init properties for the DecoratorException exception. */
+/** The exception init properties for the {@link DecoratorException} exception. */
 export type DecoratorExceptionInit = BaseExceptionInit<{
   /** The type of decorator that failed to apply. */
   decoratorTarget?: DecoratorTarget;
@@ -25,7 +25,7 @@ export type DecoratorExceptionInit = BaseExceptionInit<{
   decoratorName?: string;
 }>;
 
-/** Creates a message from the provided DecoratorExceptionInit properties. */
+/** Creates a message from the provided {@link DecoratorExceptionInit} properties. */
 function createMsgFromInit(init: DecoratorExceptionInit): string {
   const { decoratorTarget, decoratorName } = init;
   const conj =
@@ -49,13 +49,13 @@ function createMsgFromInit(init: DecoratorExceptionInit): string {
 export class DecoratorException<
   T extends DecoratorExceptionInit = DecoratorExceptionInit,
 > extends ValueException<T> {
-  /** Creates a new DecoratorException exception with the default message and no exception init properties. */
+  /** Creates a new {@link DecoratorException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new DecoratorException exception with a message created from the provided DecoratorExceptionInit properties. */
+  /** Creates a new {@link DecoratorException} exception with a message created from the provided {@link DecoratorExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new DecoratorException exception with the provided message, optionally with additional DecoratorExceptionInit properties. */
+  /** Creates a new {@link DecoratorException} exception with the provided message, optionally with additional {@link DecoratorExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -72,6 +72,6 @@ export class DecoratorException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the DecoratorException exception. */
+  /** The exception code for the {@link DecoratorException} exception. */
   public code = 0x11;
 }

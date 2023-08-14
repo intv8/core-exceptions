@@ -10,11 +10,11 @@ import { NotFoundException } from './not_found_exception.ts';
 //  Import exception init type
 import type { BaseExceptionInit } from '../types/types.ts';
 
-/** The default message for the KeyException exception. */
+/** The default message for the {@link KeyException} exception. */
 const DEFAULT_MESSAGE =
   'Unable to locate a property key on an object or record.';
 
-/** The exception init properties for the KeyException exception. */
+/** The exception init properties for the {@link KeyException} exception. */
 export type KeyExceptionInit = BaseExceptionInit<{
   /** The name of the missing property on which access was attempted. */
   key?: string;
@@ -26,7 +26,7 @@ export type KeyExceptionInit = BaseExceptionInit<{
   validKeys?: string[];
 }>;
 
-/** Creates a message from the provided KeyExceptionInit properties. */
+/** Creates a message from the provided {@link KeyExceptionInit} properties. */
 function createMsgFromInit(init: KeyExceptionInit): string {
   const { key, valueName, validKeys } = init;
 
@@ -55,13 +55,13 @@ function createMsgFromInit(init: KeyExceptionInit): string {
 /** An exception raised when a dynamically accessed property key does not exist on an object or record. */
 export class KeyException<T extends KeyExceptionInit = KeyExceptionInit>
   extends NotFoundException<T> {
-  /** Creates a new KeyException exception with the default message and no exception init properties. */
+  /** Creates a new {@link KeyException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new KeyException exception with a message created from the provided KeyExceptionInit properties. */
+  /** Creates a new {@link KeyException} exception with a message created from the provided {@link KeyExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new KeyException exception with the provided message, optionally with additional KeyExceptionInit properties. */
+  /** Creates a new {@link KeyException} exception with the provided message, optionally with additional {@link KeyExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -78,6 +78,6 @@ export class KeyException<T extends KeyExceptionInit = KeyExceptionInit>
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the KeyException exception. */
+  /** The exception code for the {@link KeyException} exception. */
   public code = 0x15;
 }

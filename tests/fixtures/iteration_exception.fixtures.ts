@@ -2,7 +2,7 @@
  * This file contains test cases, mocks, or other data for testing the
  * IterationException feature.
  *
- * For use in ../recursion_exception.test.ts.
+ * For use in ../iteration_exception.test.ts.
  *
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */

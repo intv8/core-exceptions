@@ -11,12 +11,12 @@ import { NotFoundException } from './not_found_exception.ts';
 import type { BaseExceptionInit } from '../types/types.ts';
 
 /**
- * The default message for the MethodException exception.
+ * The default message for the {@link MethodException} exception.
  */
 const DEFAULT_MESSAGE = 'Unable to locate a method on an object.';
 
 /**
- * The exception init properties for the MethodException exception.
+ * The exception init properties for the {@link MethodException} exception.
  */
 export type MethodExceptionInit = BaseExceptionInit<{
   /** The name of the missing method on which calling was attempted. */
@@ -29,7 +29,7 @@ export type MethodExceptionInit = BaseExceptionInit<{
   validMethods?: string[];
 }>;
 
-/** Creates a message from the provided MethodExceptionInit properties. */
+/** Creates a message from the provided {@link MethodExceptionInit} properties. */
 function createMsgFromInit(init: MethodExceptionInit): string {
   const { methodName, valueName, validMethods } = init;
 
@@ -59,13 +59,13 @@ function createMsgFromInit(init: MethodExceptionInit): string {
 export class MethodException<
   T extends MethodExceptionInit = MethodExceptionInit,
 > extends NotFoundException<T> {
-  /** Creates a new MethodException exception with the default message and no exception init properties. */
+  /** Creates a new {@link MethodException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new MethodException exception with a message created from the provided MethodExceptionInit properties. */
+  /** Creates a new {@link MethodException} exception with a message created from the provided {@link MethodExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new MethodException exception with the provided message, optionally with additional MethodExceptionInit properties. */
+  /** Creates a new {@link MethodException} exception with the provided message, optionally with additional {@link MethodExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -82,6 +82,6 @@ export class MethodException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the MethodException exception. */
+  /** The exception code for the {@link MethodException} exception. */
   public code = 0x16;
 }

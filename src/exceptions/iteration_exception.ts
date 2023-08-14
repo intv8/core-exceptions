@@ -13,10 +13,10 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  Import software operation type
 import type { SoftwareOperation } from '../../deps.ts';
 
-/** The default message for the IterationException exception. */
+/** The default message for the {@link IterationException} exception. */
 const DEFAULT_MESSAGE = 'An operation exceeded the maximum iteration count.';
 
-/** The exception init properties for the IterationException exception. */
+/** The exception init properties for the {@link IterationException} exception. */
 export type IterationExceptionInit = BaseExceptionInit<{
   /** The type of operation that is iterating too often. */
   operationType?: SoftwareOperation;
@@ -31,7 +31,7 @@ export type IterationExceptionInit = BaseExceptionInit<{
   repeatingValue?: boolean;
 }>;
 
-/** Creates a message from the provided IterationExceptionInit properties. */
+/** Creates a message from the provided {@link IterationExceptionInit} properties. */
 function createMsgFromInit(init: IterationExceptionInit): string {
   const { operationType, operationName, iterationCount, repeatingValue } = init;
 
@@ -81,13 +81,13 @@ function createMsgFromInit(init: IterationExceptionInit): string {
 export class IterationException<
   T extends IterationExceptionInit = IterationExceptionInit,
 > extends AbortedException<T> {
-  /** Creates a new IterationException exception with the default message and no exception init properties. */
+  /** Creates a new {@link IterationException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new IterationException exception with a message created from the provided IterationExceptionInit properties. */
+  /** Creates a new {@link IterationException} exception with a message created from the provided {@link IterationExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new IterationException exception with the provided message, optionally with additional IterationExceptionInit properties. */
+  /** Creates a new {@link IterationException} exception with the provided message, optionally with additional {@link IterationExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -104,6 +104,6 @@ export class IterationException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the IterationException exception. */
+  /** The exception code for the {@link IterationException} exception. */
   public code = 0x1a;
 }

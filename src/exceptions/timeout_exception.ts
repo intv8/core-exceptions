@@ -13,10 +13,10 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  Import software operation type
 import type { SoftwareOperation } from '../../deps.ts';
 
-/** The default message for the TimeoutException exception. */
+/** The default message for the {@link TimeoutException} exception. */
 const DEFAULT_MESSAGE = 'An operation timed out.';
 
-/** The exception init properties for the TimeoutException exception. */
+/** The exception init properties for the {@link TimeoutException} exception. */
 export type TimeoutExceptionInit = BaseExceptionInit<{
   /** The type of operation that timed out. */
   operationType?: SoftwareOperation;
@@ -28,7 +28,7 @@ export type TimeoutExceptionInit = BaseExceptionInit<{
   operationTimeout?: number;
 }>;
 
-/** Creates a message from the provided TimeoutExceptionInit properties. */
+/** Creates a message from the provided {@link TimeoutExceptionInit} properties. */
 function createMsgFromInit(init: TimeoutExceptionInit): string {
   const { operationType, operationName, operationTimeout } = init;
 
@@ -61,13 +61,13 @@ function createMsgFromInit(init: TimeoutExceptionInit): string {
 export class TimeoutException<
   T extends TimeoutExceptionInit = TimeoutExceptionInit,
 > extends AbortedException<T> {
-  /** Creates a new TimeoutException exception with the default message and no exception init properties. */
+  /** Creates a new {@link TimeoutException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new TimeoutException exception with a message created from the provided TimeoutExceptionInit properties. */
+  /** Creates a new {@link TimeoutException} exception with a message created from the provided {@link TimeoutExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new TimeoutException exception with the provided message, optionally with additional TimeoutExceptionInit properties. */
+  /** Creates a new {@link TimeoutException} exception with the provided message, optionally with additional {@link TimeoutExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation

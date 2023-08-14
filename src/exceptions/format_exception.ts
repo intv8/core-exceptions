@@ -10,18 +10,18 @@ import { InvalidException } from './invalid_exception.ts';
 //  Import exception init type
 import type { BaseExceptionInit } from '../types/types.ts';
 
-/** The exception init properties for the FormatException exception. */
+/** The exception init properties for the {@link FormatException} exception. */
 export type FormatExceptionInit = BaseExceptionInit;
 
 /** An exception raised when an assertion is incorrect. */
 export class FormatException<
   T extends FormatExceptionInit = FormatExceptionInit,
 > extends InvalidException<T> {
-  /** Creates a new FormatException exception with the provided message, optionally with additional FormatExceptionInit properties. */
+  /** Creates a new {@link FormatException} exception with the provided message, optionally with additional {@link FormatExceptionInit} properties. */
   constructor(message: string, init?: T) {
     super(message, init);
   }
 
-  /** The exception code for the FormatException exception. */
+  /** The exception code for the {@link FormatException} exception. */
   public code = 0xd;
 }

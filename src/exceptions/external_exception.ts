@@ -13,10 +13,10 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  Import external codebase type
 import type { Codebase } from '../../deps.ts';
 
-/** The default message for the ExternalException exception. */
+/** The default message for the {@link ExternalException} exception. */
 const DEFAULT_MESSAGE = 'An external codebase raised an exception.';
 
-/** The exception init properties for the ExternalException exception. */
+/** The exception init properties for the {@link ExternalException} exception. */
 export type ExternalExceptionInit = BaseExceptionInit<{
   /** The type of Codebase that raised an error. */
   externalType?: Codebase;
@@ -25,7 +25,7 @@ export type ExternalExceptionInit = BaseExceptionInit<{
   externalName?: string;
 }>;
 
-/** Creates a message from the provided ExternalExceptionInit properties. */
+/** Creates a message from the provided {@link ExternalExceptionInit} properties. */
 function createMsgFromInit(init: ExternalExceptionInit): string {
   const { externalType, externalName } = init;
 
@@ -45,13 +45,13 @@ function createMsgFromInit(init: ExternalExceptionInit): string {
 export class ExternalException<
   T extends ExternalExceptionInit = ExternalExceptionInit,
 > extends Exception<T> {
-  /** Creates a new ExternalException exception with the default message and no exception init properties. */
+  /** Creates a new {@link ExternalException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new ExternalException exception with a message created from the provided ExternalExceptionInit properties. */
+  /** Creates a new {@link ExternalException} exception with a message created from the provided {@link ExternalExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new ExternalException exception with the provided message, optionally with additional ExternalExceptionInit properties. */
+  /** Creates a new {@link ExternalException} exception with the provided message, optionally with additional {@link ExternalExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -68,6 +68,6 @@ export class ExternalException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the ExternalException exception. */
+  /** The exception code for the {@link ExternalException} exception. */
   public code = 0x9;
 }

@@ -13,10 +13,10 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  validates bounds
 import { validateBounds } from '../_internals/validate_bounds.ts';
 
-/** The default message for the IndexException exception. */
+/** The default message for the {@link IndexException} exception. */
 const DEFAULT_MESSAGE = 'An index is outside the bounds of an array.';
 
-/** The exception init properties for the IndexException exception. */
+/** The exception init properties for the {@link IndexException} exception. */
 export type IndexExceptionInit = BaseExceptionInit<{
   /** The index that is outside the array index range. */
   index?: number;
@@ -28,7 +28,7 @@ export type IndexExceptionInit = BaseExceptionInit<{
   upperBound?: number;
 }>;
 
-/** Creates a message from the provided IndexExceptionInit properties. */
+/** Creates a message from the provided {@link IndexExceptionInit} properties. */
 function createMsgFromInit(init: IndexExceptionInit): string {
   const { index, valueName, upperBound } = init;
 
@@ -56,13 +56,13 @@ function createMsgFromInit(init: IndexExceptionInit): string {
 /** An exception raised when an index is outside the bounds of an array. */
 export class IndexException<T extends IndexExceptionInit = IndexExceptionInit>
   extends RangeException<T> {
-  /** Creates a new IndexException exception with the default message and no exception init properties. */
+  /** Creates a new {@link IndexException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new IndexException exception with a message created from the provided IndexExceptionInit properties. */
+  /** Creates a new {@link IndexException} exception with a message created from the provided {@link IndexExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new IndexException exception with the provided message, optionally with additional IndexExceptionInit properties. */
+  /** Creates a new {@link IndexException} exception with the provided message, optionally with additional {@link IndexExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -76,11 +76,11 @@ export class IndexException<T extends IndexExceptionInit = IndexExceptionInit>
       message = createMsgFromInit(init);
     }
 
-    validateBounds(0, init?.upperBound); //  probably not needed
+    validateBounds(0, init?.upperBound);
 
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the IndexException exception. */
+  /** The exception code for the {@link IndexException} exception. */
   public code = 0x14;
 }

@@ -1,6 +1,8 @@
 /**
  * This file contains test cases, mocks, or other data for testing the Exception feature.
  *
+ * For use in ../exception.test.ts.
+ *
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 

@@ -13,11 +13,11 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  validates bounds
 import { validateBounds } from '../_internals/validate_bounds.ts';
 
-/** The default message for the ArgumentIndexException exception. */
+/** The default message for the {@link ArgumentIndexException} exception. */
 const DEFAULT_MESSAGE =
   'An index is outside the bounds of the arguments array.';
 
-/** The exception init properties for the ArgumentIndexException exception. */
+/** The exception init properties for the {@link ArgumentIndexException} exception. */
 export type ArgumentIndexExceptionInit = BaseExceptionInit<{
   /** The index that is outside the arguments array index range. */
   index?: number;
@@ -26,7 +26,7 @@ export type ArgumentIndexExceptionInit = BaseExceptionInit<{
   upperBound?: number;
 }>;
 
-/** Creates a message from the provided ArgumentIndexExceptionInit properties. */
+/** Creates a message from the provided {@link ArgumentIndexExceptionInit} properties. */
 function createMsgFromInit(init: ArgumentIndexExceptionInit): string {
   const { index, upperBound } = init;
 
@@ -46,13 +46,13 @@ function createMsgFromInit(init: ArgumentIndexExceptionInit): string {
 export class ArgumentIndexException<
   T extends ArgumentIndexExceptionInit = ArgumentIndexExceptionInit,
 > extends ArgumentException<T> {
-  /** Creates a new ArgumentIndexException exception with the default message and no exception init properties. */
+  /** Creates a new {@link ArgumentIndexException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new ArgumentIndexException exception with a message created from the provided ArgumentIndexExceptionInit properties. */
+  /** Creates a new {@link ArgumentIndexException} exception with a message created from the provided {@link ArgumentIndexExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new ArgumentIndexException exception with the provided message, optionally with additional ArgumentIndexExceptionInit properties. */
+  /** Creates a new {@link ArgumentIndexException} exception with the provided message, optionally with additional {@link ArgumentIndexExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -71,6 +71,6 @@ export class ArgumentIndexException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the ArgumentIndexException exception. */
+  /** The exception code for the {@link ArgumentIndexException} exception. */
   public code = 0x18;
 }

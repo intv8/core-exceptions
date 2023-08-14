@@ -10,18 +10,18 @@ import { Exception } from './exception.ts';
 //  Import exception init type
 import type { BaseExceptionInit } from '../types/types.ts';
 
-/** The exception init properties for the AssertionException exception. */
+/** The exception init properties for the {@link AssertionException} exception. */
 export type AssertionExceptionInit = BaseExceptionInit;
 
 /** An exception raised when an assertion is incorrect. */
 export class AssertionException<
   T extends AssertionExceptionInit = AssertionExceptionInit,
 > extends Exception<T> {
-  /** Creates a new AssertionException exception with the provided message, optionally with additional AssertionExceptionInit properties. */
+  /** Creates a new {@link AssertionException} exception with the provided message, optionally with additional {@link AssertionExceptionInit} properties. */
   constructor(message: string, init?: T) {
     super(message, init);
   }
 
-  /** The exception code for the AssertionException exception. */
+  /** The exception code for the {@link AssertionException} exception. */
   public code = 0x8;
 }

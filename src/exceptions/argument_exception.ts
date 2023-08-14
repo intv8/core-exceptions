@@ -10,11 +10,11 @@ import { ValueException } from './value_exception.ts';
 //  Import exception init type
 import type { BaseExceptionInit } from '../types/types.ts';
 
-/** The default message for the ArgumentException exception. */
+/** The default message for the {@link ArgumentException} exception. */
 const DEFAULT_MESSAGE =
   'An argument has the correct type, but an invalid value.';
 
-/** The exception init properties for the ArgumentException exception. */
+/** The exception init properties for the {@link ArgumentException} exception. */
 export type ArgumentExceptionInit = BaseExceptionInit<{
   /** The name of the argument. */
   argumentName?: string;
@@ -23,7 +23,7 @@ export type ArgumentExceptionInit = BaseExceptionInit<{
   argumentConstraints?: string[];
 }>;
 
-/** Creates a message from the provided ArgumentExceptionInit properties. */
+/** Creates a message from the provided {@link ArgumentExceptionInit} properties. */
 function createMsgFromInit(init: ArgumentExceptionInit): string {
   const { argumentName, argumentConstraints } = init;
 
@@ -45,13 +45,13 @@ function createMsgFromInit(init: ArgumentExceptionInit): string {
 export class ArgumentException<
   T extends ArgumentExceptionInit = ArgumentExceptionInit,
 > extends ValueException<T> {
-  /** Creates a new ArgumentException exception with the default message and no exception init properties. */
+  /** Creates a new {@link ArgumentException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new ArgumentException exception with a message created from the provided ArgumentExceptionInit properties. */
+  /** Creates a new {@link ArgumentException} exception with a message created from the provided {@link ArgumentExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new ArgumentException exception with the provided message, optionally with additional ArgumentExceptionInit properties. */
+  /** Creates a new {@link ArgumentException} exception with the provided message, optionally with additional {@link ArgumentExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -68,6 +68,6 @@ export class ArgumentException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the ArgumentException exception. */
+  /** The exception code for the {@link ArgumentException} exception. */
   public code = 0x17;
 }

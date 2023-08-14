@@ -13,10 +13,10 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  Import numeric format type
 import type { NumericFormat } from '../../deps.ts';
 
-/** The default message for the NumericFormatException exception. */
+/** The default message for the {@link NumericFormatException} exception. */
 const DEFAULT_MESSAGE = 'An expression for a numeric formatter is invalid.';
 
-/** The exception init properties for the NumericFormatException exception. */
+/** The exception init properties for the {@link NumericFormatException} exception. */
 export type NumericFormatExceptionInit = BaseExceptionInit<{
   /** The type of formatter for which format expression is invalid. */
   formatter?: NumericFormat;
@@ -25,7 +25,7 @@ export type NumericFormatExceptionInit = BaseExceptionInit<{
   formatExpression?: string;
 }>;
 
-/** Creates a message from the provided NumericFormatExceptionInit properties. */
+/** Creates a message from the provided {@link NumericFormatExceptionInit} properties. */
 function createMsgFromInit(init: NumericFormatExceptionInit): string {
   const { formatter, formatExpression } = init;
 
@@ -45,13 +45,13 @@ function createMsgFromInit(init: NumericFormatExceptionInit): string {
 export class NumericFormatException<
   T extends NumericFormatExceptionInit = NumericFormatExceptionInit,
 > extends FormatException<T> {
-  /** Creates a new NumericFormatException exception with the default message and no exception init properties. */
+  /** Creates a new {@link NumericFormatException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new NumericFormatException exception with a message created from the provided NumericFormatExceptionInit properties. */
+  /** Creates a new {@link NumericFormatException} exception with a message created from the provided {@link NumericFormatExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new NumericFormatException exception with the provided message, optionally with additional NumericFormatExceptionInit properties. */
+  /** Creates a new {@link NumericFormatException} exception with the provided message, optionally with additional {@link NumericFormatExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -68,6 +68,6 @@ export class NumericFormatException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the NumericFormatException exception. */
+  /** The exception code for the {@link NumericFormatException} exception. */
   public code = 0xe;
 }

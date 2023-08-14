@@ -1,3 +1,9 @@
+/**
+ * This file exports the internal range boundary validation function.
+ *
+ * @copyright 2022 integer11. All rights reserved. MIT license.
+ */
+
 import { ValueException } from '../mod.ts';
 
 /** Validates that the the `upper` bound is greater than the `lower` bound of an index range. */

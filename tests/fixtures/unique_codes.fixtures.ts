@@ -1,6 +1,8 @@
 /**
  * This file contains test cases for testing that exception and warning codes are unique.
  *
+ * For use in ../unique_codes.test.ts.
+ *
  * @copyright 2022 integer11. All rights reserved. MIT license.
  */
 

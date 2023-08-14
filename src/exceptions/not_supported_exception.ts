@@ -10,18 +10,18 @@ import { InvalidException } from './invalid_exception.ts';
 //  Import exception init type
 import type { BaseExceptionInit } from '../types/types.ts';
 
-/** The exception init properties for the NotSupportedException exception. */
+/** The exception init properties for the {@link NotSupportedException} exception. */
 export type NotSupportedExceptionInit = BaseExceptionInit;
 
 /** An exception raised when an operation is not supported. */
 export class NotSupportedException<
   T extends NotSupportedExceptionInit = NotSupportedExceptionInit,
 > extends InvalidException<T> {
-  /** Creates a new NotSupportedException exception with the provided message, optionally with additional NotSupportedExceptionInit properties. */
+  /** Creates a new {@link NotSupportedException} exception with the provided message, optionally with additional {@link NotSupportedExceptionInit} properties. */
   constructor(message: string, init?: T) {
     super(message, init);
   }
 
-  /** The exception code for the NotSupportedException exception. */
+  /** The exception code for the {@link NotSupportedException} exception. */
   public code = 0xc;
 }

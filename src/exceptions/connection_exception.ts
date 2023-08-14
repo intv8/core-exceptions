@@ -10,18 +10,18 @@ import { OSException } from './os_exception.ts';
 //  Import exception init type
 import type { BaseExceptionInit } from '../types/types.ts';
 
-/** The exception init properties for the ConnectionException exception. */
+/** The exception init properties for the {@link ConnectionException} exception. */
 export type ConnectionExceptionInit = BaseExceptionInit;
 
 /** An exception raised when a connection is in an unexpected state. */
 export class ConnectionException<
   T extends ConnectionExceptionInit = ConnectionExceptionInit,
 > extends OSException<T> {
-  /** Creates a new ConnectionException exception with the provided message, optionally with additional ConnectionExceptionInit properties. */
+  /** Creates a new {@link ConnectionException} exception with the provided message, optionally with additional {@link ConnectionExceptionInit} properties. */
   constructor(message: string, init?: T) {
     super(message, init);
   }
 
-  /** The exception code for the ConnectionException exception. */
+  /** The exception code for the {@link ConnectionException} exception. */
   public code = 0x7;
 }

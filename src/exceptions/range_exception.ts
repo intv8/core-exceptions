@@ -13,10 +13,10 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  validates bounds
 import { validateBounds } from '../_internals/validate_bounds.ts';
 
-/** The default message for the RangeException exception. */
+/** The default message for the {@link RangeException} exception. */
 const DEFAULT_MESSAGE = 'A numeric value is out of range.';
 
-/** The exception init properties for the RangeException exception. */
+/** The exception init properties for the {@link RangeException} exception. */
 export type RangeExceptionInit = BaseExceptionInit<{
   /** The value that is out of range. */
   value?: number;
@@ -31,7 +31,7 @@ export type RangeExceptionInit = BaseExceptionInit<{
   upperBound?: number;
 }>;
 
-/** Creates a message from the provided RangeExceptionInit properties. */
+/** Creates a message from the provided {@link RangeExceptionInit} properties. */
 function createMsgFromInit(init: RangeExceptionInit): string {
   const { value, valueName, lowerBound, upperBound } = init;
 
@@ -79,13 +79,13 @@ function createMsgFromInit(init: RangeExceptionInit): string {
 /** An exception raised when a number is outside the bounds of a specified range. */
 export class RangeException<T extends RangeExceptionInit = RangeExceptionInit>
   extends ValueException<T> {
-  /** Creates a new RangeException exception with the default message and no exception init properties. */
+  /** Creates a new {@link RangeException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new RangeException exception with a message created from the provided RangeExceptionInit properties. */
+  /** Creates a new {@link RangeException} exception with a message created from the provided {@link RangeExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new RangeException exception with the provided message, optionally with additional RangeExceptionInit properties. */
+  /** Creates a new {@link RangeException} exception with the provided message, optionally with additional {@link RangeExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -104,6 +104,6 @@ export class RangeException<T extends RangeExceptionInit = RangeExceptionInit>
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the RangeException exception. */
+  /** The exception code for the {@link RangeException} exception. */
   public code = 0x12;
 }

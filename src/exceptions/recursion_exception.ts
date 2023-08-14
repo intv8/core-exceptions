@@ -13,10 +13,10 @@ import type { BaseExceptionInit } from '../types/types.ts';
 //  Import software operation type
 import type { SoftwareOperation } from '../../deps.ts';
 
-/** The default message for the RecursionException exception. */
+/** The default message for the {@link RecursionException} exception. */
 const DEFAULT_MESSAGE = 'An operation exceeded the maximum recursion depth.';
 
-/** The exception init properties for the RecursionException exception. */
+/** The exception init properties for the {@link RecursionException} exception. */
 export type RecursionExceptionInit = BaseExceptionInit<{
   /** The type of operation that is navigating too deep. */
   operationType?: SoftwareOperation;
@@ -28,7 +28,7 @@ export type RecursionExceptionInit = BaseExceptionInit<{
   recursionDepth?: number;
 }>;
 
-/** Creates a message from the provided RecursionExceptionInit properties. */
+/** Creates a message from the provided {@link RecursionExceptionInit} properties. */
 function createMsgFromInit(init: RecursionExceptionInit): string {
   const { operationType, operationName, recursionDepth } = init;
 
@@ -60,13 +60,13 @@ function createMsgFromInit(init: RecursionExceptionInit): string {
 export class RecursionException<
   T extends RecursionExceptionInit = RecursionExceptionInit,
 > extends AbortedException<T> {
-  /** Creates a new RecursionException exception with the default message and no exception init properties. */
+  /** Creates a new {@link RecursionException} exception with the default message and no exception init properties. */
   constructor();
 
-  /** Creates a new RecursionException exception with a message created from the provided RecursionExceptionInit properties. */
+  /** Creates a new {@link RecursionException} exception with a message created from the provided {@link RecursionExceptionInit} properties. */
   constructor(init: T);
 
-  /** Creates a new RecursionException exception with the provided message, optionally with additional RecursionExceptionInit properties. */
+  /** Creates a new {@link RecursionException} exception with the provided message, optionally with additional {@link RecursionExceptionInit} properties. */
   constructor(message: string, init?: T);
 
   //  Constructor overload implementation
@@ -83,6 +83,6 @@ export class RecursionException<
     super(message ? message : DEFAULT_MESSAGE, init);
   }
 
-  /** The exception code for the RecursionException exception. */
+  /** The exception code for the {@link RecursionException} exception. */
   public code = 0x19;
 }

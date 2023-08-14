@@ -10,18 +10,18 @@ import { ValueException } from './value_exception.ts';
 //  Import exception init type
 import type { BaseExceptionInit } from '../types/types.ts';
 
-/** The exception init properties for the NotFoundException exception. */
+/** The exception init properties for the {@link NotFoundException} exception. */
 export type NotFoundExceptionInit = BaseExceptionInit;
 
 /** An exception raised when an requested item is not found. */
 export class NotFoundException<
   T extends NotFoundExceptionInit = NotFoundExceptionInit,
 > extends ValueException<T> {
-  /** Creates a new NotFoundException exception with the provided message, optionally with additional NotFoundExceptionInit properties. */
+  /** Creates a new {@link NotFoundException} exception with the provided message, optionally with additional {@link NotFoundExceptionInit} properties. */
   constructor(message: string, init?: T) {
     super(message, init);
   }
 
-  /** The exception code for the NotFoundException exception. */
+  /** The exception code for the {@link NotFoundException} exception. */
   public code = 0x13;
 }
