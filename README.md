@@ -11,7 +11,7 @@ partic11e is a collection of easy-to-use utility and feature libraries for creat
 <h1 align="center">partic11e - core-exceptions</h1>
 
 <p align="center">
-<!-- @TODO Package description -->
+Commonly used exceptions for the partic11e library.
 </p>
 
 <p align="center">
