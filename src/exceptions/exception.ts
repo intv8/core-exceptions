@@ -1,7 +1,7 @@
 /**
  * This file exports the Exception exception and related features.
  *
- * @copyright 2022 integer11. All rights reserved. MIT license.
+ * @copyright 2022 integereleven. All rights reserved. MIT license.
  */
 
 import { I11N_EX2_HOST, I11N_EX2_PATH } from '../_internals/mod.ts';

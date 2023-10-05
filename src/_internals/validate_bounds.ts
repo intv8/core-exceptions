@@ -1,7 +1,7 @@
 /**
  * This file exports the internal range boundary validation function.
  *
- * @copyright 2022 integer11. All rights reserved. MIT license.
+ * @copyright 2022 integereleven. All rights reserved. MIT license.
  */
 
 import { ValueException } from '../mod.ts';

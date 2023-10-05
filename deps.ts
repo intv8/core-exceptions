@@ -1,10 +1,9 @@
 /**
- * This file re-exports external dependencies used by the partic11e core-exceptions package.
+ * This file re-exports external dependencies used by the intv8 core-exceptions package.
  *
- * @copyright 2022 integer11. All rights reserved. MIT license.
+ * @copyright 2022 integereleven. All rights reserved. MIT license.
  */
 
-//  Export types
 export type {
   AnonymousObject,
   Codebase,
@@ -12,4 +11,4 @@ export type {
   NumericFormat,
   Parser,
   SoftwareOperation,
-} from 'https://denopkg.com/partic11e/core-types@dev/mod.ts';
+} from 'https://denopkg.com/intv8/core-types@dev/mod.ts';

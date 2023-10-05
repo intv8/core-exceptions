@@ -1,12 +1,12 @@
 /**
- * This file exports internal constants used by the partic11e core-exceptions package.
+ * This file exports internal constants used by the intv8 core-exceptions package.
  * Constants exported here should not be exposed to the public API.
  *
- * @copyright 2022 integer11. All rights reserved. MIT license.
+ * @copyright 2022 integereleven. All rights reserved. MIT license.
  */
 
-/** The host for integer11's exception explainer tool. */
-export const I11N_EX2_HOST = 'https://docs.integer11.org';
+/** The host for integereleven's exception explainer tool. */
+export const I11N_EX2_HOST = 'https://docs.integereleven.org';
 
-/** The path for integer11's exception explainer tool. */
+/** The path for integereleven's exception explainer tool. */
 export const I11N_EX2_PATH = '/ex2';
